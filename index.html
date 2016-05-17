@@ -1,0 +1,46 @@
+<?
+	$connect = pg_connect("dbname = school_db");
+	//var_dump($connect);
+	$query = "select * from school_class";
+	$result = pg_query($connect,$query);
+	var_dump($result);
+
+	//行数をとってきます
+	
+	$rows = pg_num_rows($result);
+	//var_dump($rows)."<br>";
+
+	$row = pg_fetch_row($result);
+	//var_dump($row)."<br>";
+	$row2 = pg_fetch_row($result);
+	//var_dump($row2)."<br>";
+	$row3 = pg_fetch_row($result);
+	//var_dump($row3)."<br>";
+	$row4 = pg_fetch_row($result);
+?>
+<!DOCTYPE html>
+<meta charset=UTF-8>
+<head>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>a</title>
+</head>
+<body bgcolor="#FFFFFF">
+    <table border="3">
+    	<tr>
+    		<td><?echo $row[1];?></td>
+    	</tr>
+
+    	<tr>
+    		<td><?echo $row2[1];?></td>
+    	</tr>
+
+    	<tr>
+    		<td><?echo $row3[1];?></td>
+    	</tr>
+
+    	<tr>
+    		<td><?echo $row4[1];?></td>
+    	</tr>
+    </table>
+</body>
