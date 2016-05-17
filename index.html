@@ -1,6 +1,6 @@
 <?
 	$connect = pg_connect("dbname = school_db");
-	//var_dump($connect);
+	var_dump($connect);
 	$query = "select * from school_class";
 	$result = pg_query($connect,$query);
 	var_dump($result);
